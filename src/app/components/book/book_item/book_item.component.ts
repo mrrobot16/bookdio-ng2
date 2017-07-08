@@ -15,12 +15,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       </tr>
     </thead>
     <tbody>
-          <tr class="animate" id="{{book.id}}" [myHighlight]="blue" [ngClass]="selectBook"  *ngFor="let book of current_books" (click)="selectBookID($event, book.id)">
+    <!--[myHighlight]="blue"-->
+          <tr class="animate" id="{{book.id}}" [ngClass]="selectBook" *ngFor="let book of current_books" (click)="selectBookID($event, book.id)">
             <td data-label="Book Name">{{book.book_name }}</td>
             <td data-label="Author">{{book.author_name}}</td>
             <td data-label="ISBN">{{book.isbn_code}}</td>
             <td data-label="Book Quantity">{{book.book_quantity}}</td>
-            <td data-label="Published Date">{{book.published_date | date | returnMonthYear }}</td>
+            <!--<td data-label="Published Date">{{book.published_date | date | returnMonthYear }}</td>-->
+            <td data-label="Published Date">{{book.published_date }}</td>
             <td data-label="Book Category">{{book.book_category}}</td>
             <td data-label="Books Issued">{{book.book_issued}}</td>
           </tr>

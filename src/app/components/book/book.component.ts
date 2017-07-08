@@ -23,7 +23,7 @@ export class BookComponent implements OnInit {
   //   this.helper_service = helper_service
   // }
   constructor(shared_service: SharedService){
-
+    
   }
 
   ngOnInit(){
