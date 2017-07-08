@@ -13,7 +13,10 @@ import {CORE_DECLARATIONS, CORE_PROVIDERS} from './'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes, {
+      useHash: true
+    })
   ],
   providers: [CORE_PROVIDERS],
   bootstrap: [CORE_DECLARATIONS[0]]

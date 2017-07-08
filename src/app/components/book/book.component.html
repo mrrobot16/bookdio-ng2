@@ -1,7 +1,7 @@
 <div class="row container">
     <div class="col-sm-12">
-      <h1>Book Component</h1>
-      <!-- <p class="lead underlined">Number of books <span id='total_books'>{{books.length}}</span></p>
+      <!-- <h1>Book Component</h1> -->
+      <p class="lead underlined">Number of books <span id='total_books'>{{books.length}}</span></p>
         <div class="books table-responsive" *ngIf="books.length > 0">
           <book-item (selectBook)="selectBookID($event)" [current_books]='current_books'></book-item>
           <div class="flex-center container paginateBook">
@@ -19,6 +19,6 @@
           <div class="book-form">
             <book-form (getAllBooks)='displayBooks()' (deSelect)="unSelectBooks()" [all_books]="books" [book_id]="book_id"></book-form>
           </div>
-        </div> -->
+        </div>
     </div>
 </div>
