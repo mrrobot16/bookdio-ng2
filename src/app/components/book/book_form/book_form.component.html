@@ -1,0 +1,49 @@
+<div class="flex-center container buttons form-buttons">
+  <button id="add-book" class="btn-primary button" type="button" name="button" (click)="showForm()">Add</button>
+  <button class="btn btn-default button" type="button" name="button" (click)="editBook()" [disabled]="button_edit_disable">Edit</button>
+  <button class="btn btn-success button" type="button" name="button" (click)="issueBook()" [disabled]='button_issue_disable'>Rent</button>
+  <button class="btn btn-danger button " type="button" name="button" (click)="deleteBook()" [disabled]="button_disable">Delete</button>
+</div>
+
+<div [ngClass]='toggleEditError' class="flex-center container">
+  <p>You must select book from in order to edit</p>
+</div>
+<div class="container">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value, $event)" >
+      <div class="form-group">
+          <label>Book Name</label>
+          <input id="book_name" type="text" formControlName="book_name" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+          <label>Author</label>
+          <input id="author_name" type="text" formControlName="author_name" class="form-control" required>
+      </div>
+      <div class="form-group">
+          <label>ISBN Code</label>
+          <div [ngClass]="toggleMessage">
+            <span>Warning: Duplicate Book ISBN. You will only be able to add more book_quantity, Confirm?</span>
+            <button class="btn-primary" type="button" (click)="toggleDisabled('off')">Confirm</button>
+          </div>
+          <input id="isbn_code" type="text" formControlName="isbn_code" class="form-control" required>
+      </div>
+      <div class="form-group">
+          <label>Book Quantity</label>
+          <input id="book_quantity" type="number" formControlName="book_quantity" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+          <label>Published Date</label>
+          <input id="pub_date" type="month" formControlName="published_date" maxlength=4 max='2018' class="form-control" required>
+      </div>
+
+      <div class="form-group">
+          <label>Book Category</label>
+          <input id="book_category" type="text" formControlName="book_category" class="form-control" required>
+      </div>
+
+      <span class="buttons">
+        <button id='submit-book' type="submit" class="btn btn-primary button">Save Book</button>
+      </span>
+  </form>
+</div>

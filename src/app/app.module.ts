@@ -13,6 +13,7 @@ import {CORE_DECLARATIONS, CORE_PROVIDERS} from './'
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes, {
       useHash: true

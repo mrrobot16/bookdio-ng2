@@ -1,0 +1,110 @@
+.underlined {
+    text-decoration: underline;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-color: grey;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: initial;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+
+}
+
+tbody > tr:nth-child(odd) {
+  /*background-color: #7be7ff;*/
+  color:red;
+}
+
+tbody > tr:nth-child(even){
+  color:#006a82;
+}
+.books tr {
+    font-size: 15px;
+}
+
+.flex-center button {
+  margin: 1.5em;
+}
+
+.hide {
+  visibility: hidden;
+}
+.show {
+  visibility: visible;
+}
+
+.hideMessage {
+  display: none !important;
+}
+.showMessage {
+  display:inherit
+}
+
+form > div:nth-child(3) > div > span {
+  color:red !important;
+}
+
+form > div:nth-child(3) > div > button {
+  margin: 1em 0;
+}
+
+
+.selectedBook {
+  background-color: #ff7600 !important;
+  /*color: white !important;*/
+  color: #00ff2b !important;
+}
+
+/*table#book_transactions > tbody > tr > button {
+  margin-left: 1em;
+  margin-top: 8px;
+  height: 1.8em;
+}*/
+
+.book_transactions > button {
+
+}
+
+.transactions > tbody > tr > button {
+  margin-left: 1em;
+  margin-top: 8px;
+  height: 1.8em;
+}
+
+.background-top {
+  background-color: crimson;
+  color: orange;
+  border-top: #dddddd solid 2px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.left-arrow {
+  margin: 1em !important;
+  width: 2em;
+  height: 2em;
+  background-color: #efff00 !important;
+  background: url(http://i.imgur.com/6FoJCbD.png) -20px -19px no-repeat;
+}
+
+.right-arrow {
+  margin: 1em !important;
+  width: 2em;
+  height: 2em;
+  background-color: #9dff00 !important;
+  background: url(http://i.imgur.com/6FoJCbD.png) -40px -19px no-repeat;
+}

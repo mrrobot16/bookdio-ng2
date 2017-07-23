@@ -12,25 +12,27 @@ import {Router} from '@angular/router';
   styleUrls:['./top_bar.scss']
 })
 export class TopNavBar {
-  constructor(shared_service: SharedService, router: Router) {
+  button_disable:boolean;
+  book_id: number;
+  constructor(private shared_service: SharedService, private router: Router) {
     // this.router = router
     // this.shared_service = shared_service
     // this.router.location._platformStrategy._platformLocation.location.hash
-    // this.enableBookTransactions()
+    this.enableBookTransactions()
   }
   enableBookTransactions(){
-    // this.shared_service.pushedBookID.subscribe(
-      // (book_id) => {
-        // this.button_disable = true
-        // this.book_id = book_id
-        // this.book_id ? this.button_disable = false : this.button_disable = true
-      // }
-    // )
+    this.shared_service.pushedBookID.subscribe(
+      (book_id) => {
+        this.button_disable = true
+        this.book_id = book_id
+        this.book_id ? this.button_disable = false : this.button_disable = true
+      }
+    )
   }
   viewBooks(){
-    // this.router.navigate(['books'])
+    this.router.navigate(['books'])
   }
   viewBookTransactions(){
-    // this.router.navigate(['book/'+this.book_id+'/book_transactions'])
+    this.router.navigate(['book/'+this.book_id+'/book_transactions'])
   }
 }

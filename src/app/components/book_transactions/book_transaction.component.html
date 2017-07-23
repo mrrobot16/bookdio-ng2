@@ -1,0 +1,41 @@
+<div class="container">
+  <div *ngIf="book_id">
+    <h3 *ngIf="!book_id">Book Transactions for {{book.book_name}}</h3>
+    <table width="400" height="5" class="transactions" id="books">
+      <thead *ngIf='!zero_transaction_message'>
+        <tr>
+          <th>Transaction Date</th>
+          <th>Transaction Type</th>
+          <th>Transaction Status</th>
+          <th>Returned Date </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="book_transactions" *ngFor="let book_transaction of current_book_transactions">
+          <td data-label='Transaction Date'>{{book_transaction.created_at | date }}</td>
+          <td data-label='Transaction Type'>{{book_transaction.transaction_type | uppercase}}</td>
+          <td data-label='Transaction Status'>{{ book_transaction.transaction_status ? 'Open': 'Closed'}}</td>
+          <td data-label='Returned Date'>{{ book_transaction.transaction_status ? 'Not Returned': book_transaction.updated_at | date }}</td>
+          <button *ngIf='book_transaction.transaction_status' class="btn-danger" (click)="returnBookIssue(book_transaction)">Return Book</button>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf='!book_id' class="flex-center container paginateBook">
+      <button class="animate left-arrow button" type="button" name="button" (click)="paginateBooks('previous')"></button>
+        <span>
+          <div>
+              <span>Showing from</span>
+              <span>{{1+(page_number-1)*10}}</span>–
+              <span>{{page_number*10 > book_transactions.length ? book_transactions.length : page_number*10  }}</span> of
+              <span>{{book_transactions.length}}</span>
+          </div>
+        </span>
+      <button class="animate right-arrow button" type="button" name="button" (click)="paginateBooks('next')"></button>
+    </div>
+</div>
+  <p class="flex-center" *ngIf='zero_transaction_message'>No book transactions for <br><strong>{{book.book_name}} </strong></p>
+
+  <div *ngIf='!book_id' class="flex-center">
+    <h3>No book selected go to <a href="#/books">books</a> and select a book to view transactions</h3>
+  </div>
+</div>
